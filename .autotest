@@ -1,0 +1,4 @@
+require 'autotest/growl'
+Autotest::Growl::show_modified_files = true
+Autotest::Growl::remote_notification = true
+
