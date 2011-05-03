@@ -1,8 +1,27 @@
 DemoAppTwitterFromScratch::Application.routes.draw do
 
-  get "pages/home"
-  get "pages/contact"
-  get "pages/about"
+
+  match '/contact', :to => 'pages#contact'
+  match '/about',   :to => 'pages#about'
+  match '/help',    :to => 'pages#help'
+
+  root :to => 'pages#home'
+
+#matches ’/about’ and routes it to the about action in the Pages controller.
+#Before, this was more explicit: we used get ’pages/about’ to get to the same place,
+#but /about is more succinct.
+#What isn’t obvious is that match ’/about’ also automatically creates named routes
+#for use in the controllers and views:
+#about_path => '/about'
+#about_url  => 'http://localhost:3000/about'
+
+
+
+  # works, from early chapters of the tutorial
+  #get "pages/home"
+  #get "pages/contact"
+  #get "pages/about"
+  #get "pages/help"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
