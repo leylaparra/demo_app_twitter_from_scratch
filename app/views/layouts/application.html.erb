@@ -43,8 +43,9 @@
       <footer>
         <nav class="round">
           <ul>
-            <li><%= link_to "About", '#' %></li>
-            <li><%= link_to "Contact", '#' %></li>
+            <!-- <li><%= link_to "About", '#' %></li>  Works, but we added a about_path in the route file-->
+            <li><%= link_to "About", about_path %></li>
+            <li><%= link_to "Contact", contact_path %></li>
             <li><a href="http://news.railstutorial.org/">News</a></li>
             <li><a href="http://www.railstutorial.org/">Rails Tutorial</a></li>
           </ul>

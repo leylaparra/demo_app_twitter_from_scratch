@@ -1,0 +1,32 @@
+<!--  before we added the about_path to route file
+<header>
+  <%= image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", '#' %></li>
+      <li><%= link_to "Help", '#' %></li>
+      <li><%= link_to "Sign in", '#' %></li>
+    </ul>
+  </nav>
+</header>
+-->
+
+
+
+<!--Note that this code defines the local variable logo for the logo image tag
+It’s especially important to notice that the ERb for the variable assignment
+doesn’t have an equals sign; it’s just <  %  ,
+because we don’t want that line inserted into the template.-->
+
+<header>
+  
+  <% logo = image_tag("logo.png", :alt => "Sample App", :class => "round") %>
+  <%= link_to logo, root_path %>
+  <nav class="round">
+    <ul>
+      <li><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Help", help_path %></li>
+      <li><%= link_to "Sign in", '#' %></li>
+    </ul>
+  </nav>
+</header>
